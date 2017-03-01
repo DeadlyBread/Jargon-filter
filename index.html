@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Oakhall Jargon Filter</title>
+
+	<link href="style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+<body>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script>
+        function filter() {
+            $.ajax({
+                url: "filter.php",
+                type: "post",
+                data: {
+                    text: document.getElementById("jargon-input").value
+                },
+                success: function(r) {
+                    //alert(r);
+                    document.getElementById("jargon-output").value = r;
+                }
+            });
+        }
+    </script>
+    <div id="container">
+        <h1>Oakhall Jargon Filter (prototype)</h1>
+        <h2>Enter your text here:<a href="#" id="filter-btn" onclick="filter()">Filter →</a></h2>
+        <div id="left"><textarea id="jargon-input"></textarea></div><div id="right"><textarea id="jargon-output"></textarea></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+h1 {
+    font-family: "Open sans", sans-serif;
+    font-weight: 700;
+    width: 100%;
+}
+
+h2 {
+    font-family: "Open sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+div#container {
+    margin-left: 5%;
+}
+
+div#left { float: left; }
+div#right { 
+    float: right; 
+    margin-right: 5%;
+}
+
+a#filter-btn {
+    margin-left: 25.2%;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    font-weight: 800 !important;
+    font-style: normal !important;
+    font-size: 20px !important;
+    color: #000000;
+}
+a#filter-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+textarea {
+    width: 800px;
+    height: 750px;
+    border: 1px solid #000000;
+    font-family: "Open sans", sans-serif;
+}
