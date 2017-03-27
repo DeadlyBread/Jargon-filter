@@ -1,34 +1,42 @@
 h1 {
     font-family: "Open sans", sans-serif;
     font-weight: 700;
+    font-size: 150%;
     width: 100%;
 }
 
 h2 {
     font-family: "Open sans", sans-serif;
     font-weight: 400;
+    font-size: 100%;
     font-style: italic;
 }
 
 div#container {
-    margin-left: 5%;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 45vw;
+    width: 90vw;
+    /*background-color: blue;*/
 }
 
-div#left { float: left; }
+div#left { float: left; width: 45%; height: 80%;}
 div#right { 
     float: right; 
+    width: 45%;
+    height: 80%;
     margin-right: 5%;
 }
 
 a#filter-btn {
-    margin-left: 25.2%;
+    margin-left: 5vw;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 7px 14px;
     border: 1px solid #000000;
     border-radius: 30px;
     font-weight: 800 !important;
     font-style: normal !important;
-    font-size: 20px !important;
+    font-size: 80%;
     color: #000000;
 }
 a#filter-btn:hover {
@@ -37,8 +45,77 @@ a#filter-btn:hover {
 }
 
 textarea {
-    width: 800px;
-    height: 750px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #000000;
     font-family: "Open sans", sans-serif;
 }
+
+    @media screen and (orientation: portrait) {
+
+     div#left {
+        float: none;
+        width: 90%;
+        margin-bottom: 5%;
+      }
+
+      div#right {
+        float: none;
+        width: 90%
+      }
+
+      a#filter-btn {
+        font-size: 60%;
+        margin-left: 15%;
+      }
+    }
+
+
+    @media screen and (min-width: 1000px) {
+        h1 { font-size: 200%; }
+        h2 { font-size: 200%; }
+
+        a#filter-btn {
+            
+        }
+    }
+
+    @media screen and (min-height: 1000px) and (orientation: portrait) {
+
+        a#filter-btn {
+            font-size: 100%;
+        }
+    }
+
+    @media screen and (max-width: 1250px) and (min-width: 1000px) {
+        h1 { font-size: 170%; }
+        h2 { font-size: 170%; }
+
+        a#filter-btn {
+            margin-left: 7vw;
+            font-size: 65%;
+        }
+    }
+
+
+    @media screen and (max-width: 600px) {
+        h1 { font-size: 100%; }
+        h2 { font-size: 90%; }
+
+        a#filter-btn {
+        font-size: 50%;
+        margin-left: 5%;
+        }
+    }
+
+    @media screen and (min-height: 600px) and (max-height: 1000px) and (orientation: portrait) {
+        h1 { font-size: 140%; }
+        h2 { font-size: 100%; }
+
+        a#filter-btn {
+        font-size: 60%;
+        margin-left: 10%;
+        }
+    }
+
+
