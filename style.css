@@ -1,121 +1,252 @@
-h1 {
-    font-family: "Open sans", sans-serif;
-    font-weight: 700;
-    font-size: 150%;
-    width: 100%;
-}
-
-h2 {
-    font-family: "Open sans", sans-serif;
-    font-weight: 400;
-    font-size: 100%;
-    font-style: italic;
-}
-
 div#container {
-    margin-left: 5vw;
-    margin-right: 5vw;
-    height: 45vw;
-    width: 90vw;
-    /*background-color: blue;*/
+	/*background-color: yellow;*/
+	margin-left: 5vw;
+	width: 90vw;
+	height: 90vh;
+	font-family: "Open sans", sans-serif;
 }
 
-div#left { float: left; width: 45%; height: 80%;}
-div#right { 
-    float: right; 
-    width: 45%;
-    height: 80%;
-    margin-right: 5%;
+div#left-side {
+	position: relative;
+	float: left;
+	height: 75%;
+	width: 47.5%;
+	/*background-color: blue;*/
+}
+
+div#right-side {
+	position: relative;
+	float: left;
+	margin-left: 5%;
+	height: 75%;
+	width: 47.5%;
+	/*background-color: red;*/
+}
+
+h2#text-enter-text {
+	float: left;
+	font-size: 160%;
+	margin-top: 2%;
+	font-style: italic;
+}
+
+h2#jargon-score-text {
+	font-style: italic;
+	font-size: 160%;
+	float: left;
+}
+
+textarea#jargon-input {
+	width: 99%;
+	height: 85%;
+}
+
+textarea#jargon-output {
+	width: 99%;
+	height: 85%;
 }
 
 a#filter-btn {
-    margin-left: 5vw;
+	margin-top: 1%;
+	margin-left: 3%;
+	float: left;
     text-decoration: none;
     padding: 7px 14px;
     border: 1px solid #000000;
     border-radius: 30px;
     font-weight: 800 !important;
     font-style: normal !important;
-    font-size: 80%;
+    font-size: 140%;
     color: #000000;
 }
+
 a#filter-btn:hover {
     background-color: #000000;
     color: #ffffff;
 }
 
-textarea {
-    width: 100%;
-    height: 100%;
+a#clear-btn {
+	float: left;
+    text-decoration: none;
+    padding: 7px 14px;
     border: 1px solid #000000;
-    font-family: "Open sans", sans-serif;
+    border-radius: 30px;
+    font-weight: 800 !important;
+    font-style: normal !important;
+    font-size: 140%;
+    color: #000000;
 }
 
-    @media screen and (orientation: portrait) {
+a#clear-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
 
-     div#left {
-        float: none;
-        width: 90%;
-        margin-bottom: 5%;
-      }
+img#jargon-meter {
+	width: 240px;
+	height: 60px;
+	float: left;
+	margin-left: 5%;
+}
 
-      div#right {
-        float: none;
-        width: 90%
-      }
+/*Where resizing and scaling begins!*/
 
-      a#filter-btn {
-        font-size: 60%;
-        margin-left: 15%;
-      }
-    }
+@media screen and (orientation: landscape) and (min-height: 801px) {
 
+	textarea#jargon-input {top: 10%; left: 0%; position: absolute;}
+	textarea#jargon-output {top: 10%; position: absolute;}	
 
-    @media screen and (min-width: 1000px) {
-        h1 { font-size: 200%; }
-        h2 { font-size: 200%; }
+}
 
-        a#filter-btn {
-            
-        }
-    }
+@media screen and (orientation: portrait) {
 
-    @media screen and (min-height: 1000px) and (orientation: portrait) {
+	div#container {
 
-        a#filter-btn {
-            font-size: 100%;
-        }
-    }
+		height: 95vh;
 
-    @media screen and (max-width: 1250px) and (min-width: 1000px) {
-        h1 { font-size: 170%; }
-        h2 { font-size: 170%; }
+	}
 
-        a#filter-btn {
-            margin-left: 7vw;
-            font-size: 65%;
-        }
-    }
+	div#left-side {
+		
+		float: none;
 
+		height: 40vh;
+		width: 90vw;
 
-    @media screen and (max-width: 600px) {
-        h1 { font-size: 100%; }
-        h2 { font-size: 90%; }
+	}
+	div#right-side {
 
-        a#filter-btn {
-        font-size: 50%;
-        margin-left: 5%;
-        }
-    }
+		float: none;
+		margin-left: 0%;
+		height: 40vh;
+		width: 90vw;
 
-    @media screen and (min-height: 600px) and (max-height: 1000px) and (orientation: portrait) {
-        h1 { font-size: 140%; }
-        h2 { font-size: 100%; }
+	}
 
-        a#filter-btn {
-        font-size: 60%;
-        margin-left: 10%;
-        }
-    }
+	textarea#jargon-input {
+		height: 75%;
+	}
+
+	textarea#jargon-output {
+		height: 75%;
+	}
+
+}
+
+@media screen and (orientation: portrait) and (max-width: 800px) {
+
+	a#filter-btn{font-size: 100%;}
+	a#clear-btn{font-size: 100%;}
+	h2#text-enter-text {font-size: 114%;}
+	h2#jargon-score-text {font-size: 114%; float: none;}
+	h1#main-title {font-size: 130%;}
+
+	img#jargon-meter {
+		float: none;
+		margin-left: 0%;
+		width: 60%;
+		height: 15%;
+		position: absolute;
+		top: 9%;
+	}
+
+	textarea#jargon-input {
+		width: 99%;
+		height: 70%;
+	}
+
+	textarea#jargon-output {
+		width: 99%;
+		height: 70%;
+		position: absolute;
+		bottom: 1%;
+	}
+
+}
+
+@media screen and (orientation: landscape) and (max-height: 800px) {
+
+	a#filter-btn{font-size: 60%;}
+	a#clear-btn{font-size: 60%;}
+	h2#text-enter-text {font-size: 68.4%;}
+	h2#jargon-score-text {font-size: 68.4%; float: left;}
+	h1#main-title {font-size: 78%;}
+
+	div#left-side {
+		height: 85%;
+		position: relative;
+	}
+
+	div#right-side {
+		height: 85%;
+		position: relative;
+	}
+
+	textarea#jargon-output {
+		height: 70%;
+		position: absolute;
+		bottom: 10%;
+	}
+
+	textarea#jargon-input {
+		height: 70%;
+		left: 0%;
+		position: absolute;
+		bottom: 10%;
+	}
+
+	img#jargon-meter {
+		margin-top: 0%;
+		float: left;
+		width: 180px;
+		height: 45px;
+	}
+
+	div#container {
+
+		height: 85vh;
+
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 615px) {
+
+	img#jargon-meter {
+		width: 140px;
+		height: 35px;
+	}
+
+}
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+
+	a#filter-btn{font-size: 90%;}
+	a#clear-btn{font-size: 90%;}
+	h2#text-enter-text {font-size: 100%;}
+	h2#jargon-score-text {font-size: 100%; float: none;}
+	h1#main-title {font-size: 115%;}
+
+	img#jargon-meter {
+		float: none;
+		margin-left: 0%;
+		width: 60%;
+		height: 15%;
+		position: absolute;
+		top: 9%;
+	}
+
+	textarea#jargon-input {
+		width: 99%;
+		height: 70%;
+	}
+
+	textarea#jargon-output {
+		width: 99%;
+		height: 70%;
+		position: absolute;
+		bottom: 1%;
+	}
+
+}
 
 

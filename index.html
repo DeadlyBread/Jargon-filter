@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +10,9 @@
 	<link href="style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 </head>
+
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
         function sendText() {
             $.ajax({
@@ -20,15 +22,43 @@
                     text: document.getElementById("jargon-input").value
                 },
                 success: function(r) {
-                    document.getElementById("jargon-output").value = r;
+                    var filtered = JSON.parse(r);
+                    document.getElementById("jargon-output").value = filtered.text; 
+                    document.getElementById("jargon-score-text").innerHTML = "Jargon Count: " + filtered.count + " | Jargon Score: " + filtered.score;
                 }
             });
         }
+
+        function clearText() {
+            document.getElementById("jargon-input").value = "";
+        }
     </script>
-    <div id="container">
-        <h1>Oakhall Jargon Filter (prototype)</h1>
-        <h2>Enter your text here:<a href="#" id="filter-btn" onclick="sendText()">Filter →</a></h2>
-        <div id="left"><textarea id="jargon-input"></textarea></div><div id="right"><textarea id="jargon-output" readonly></textarea></div>
-    </div>
+	<div id="container">
+		<h1 id="main-title">Oakhall Jargon Filter</h1>
+
+		<div id="left-side">
+
+			<h2 id="text-enter-text">Enter text here:</h2>
+			<a style="" href="#" id="filter-btn" onclick="sendText()">Filter →</a>
+			<textarea id="jargon-input"></textarea>
+
+		</div>
+
+		<div id="right-side">
+			
+			<h2 id="jargon-score-text">Jargon Count: 0 | Jargon Score: 0</h2><img id="jargon-meter" src="JargonRanking1.png" alt="Jargon Meter">
+			<br style="clear:both" />
+			<textarea id="jargon-output"></textarea>
+
+		</div>
+
+		<div id="clear-button-area">
+
+			<a style="" href="#" id="clear-btn" onclick="clearText()">Clear</a>
+
+		</div>
+
+	</div>
 </body>
+
 </html>

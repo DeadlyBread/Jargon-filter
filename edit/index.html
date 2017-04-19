@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Oakhall Jargon Filter — Sign in</title>
+
+    <link href="style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+</head>
+<body>
+    <script>
+        function getError() {
+            var url = window.location.search.substring(1);
+            var error = url.split("e=");
+
+            return error[1];
+        }
+        
+        var error = getError();
+        if (error == "incorrect") {
+            alert("Incorrect username or password.");
+        }
+        else if (error == "empty") {
+            alert("Please enter your username and password.");
+        }
+    </script>
+    <h1 id="center-title">Oakhall Jargon Filter</h1>
+    <form action="edit.php" method="post">
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username" />
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password" />
+        </div>
+        <div>
+            <button type="submit">Sign in</button>
+        </div>
+    </form>
+</body>
+</html>

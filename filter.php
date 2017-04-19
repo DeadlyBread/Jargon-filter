@@ -5,7 +5,7 @@
         $text = $_POST["text"];
 
         $text_lower = strtolower($text);
-        $text_lower = str_replace("", " ", $text_lower);
+        $text_lower = str_replace("-", " ", $text_lower);
 
         //Sanitise text
         $text_lower = mysqli_real_escape_string($dbc, $text_lower);
@@ -25,7 +25,13 @@
                 $count += $count_lower + $count_capital;
             }
 
-            echo $text . "\n\n(jargon count: " . $count . ") [jargon score: " . score($count, $text_lower) . "/100] << 0 - jargon free | 25 - some jargon | 50 - getting dangerous | 75 - guff city >>";
+            $JSON_arr = [
+                "text" => $text,
+                "count" => $count,
+                "score" => score($count, $text_lower)
+            ];
+
+            echo json_encode($JSON_arr);
         }
     }
 

@@ -1,0 +1,92 @@
+form {
+    margin: auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 400px;
+    padding: 20px 20px;
+}
+
+label {
+    display: inline-block;
+    text-align: left;
+    width: 90px;
+    font-family: "Open sans", sans-serif;
+}
+
+input {
+    font-family: "Open sans", sans-serif;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: "Open sans", sans-serif;
+    padding: 7px 14px;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+h1#center-title { 
+    text-align: center; 
+    margin-bottom: 15px;
+}
+h1 {
+    font-family: "Open sans", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+div#container {
+    margin-left: 5%;
+}
+
+table {
+    font-family: "Open sans", sans-serif;
+    font-size: 20px;
+}
+
+td {
+    border-bottom: 1px solid #000000;
+    padding: 20px;
+    width: 86.5%;
+}
+td.term {
+    border-right: 1px solid #000000;
+}
+
+a.btn {
+    text-decoration: none;
+    padding: 7px 14px;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    font-family: "Open sans", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 20px;
+    color: #000000;
+    margin-right: 10px;
+    cursor: pointer;
+}
+a.btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+a.delete {
+    color: #e74c3c !important;
+    border: 1px solid #e74c3c !important;
+}
+a.delete:hover {
+    background-color: #e74c3c !important;
+    color: #ffffff !important;
+}
